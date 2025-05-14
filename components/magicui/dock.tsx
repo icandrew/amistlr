@@ -8,7 +8,7 @@ import {
   useMotionValue,
   useSpring,
   useTransform,
-} from "motion/react";
+} from "framer-motion"; // Updated import for motion
 import React, { PropsWithChildren, useRef } from "react";
 
 import { cn } from "@/lib/utils";
@@ -43,14 +43,14 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
     },
     ref,
   ) => {
-    const mouseX = useMotionValue(Infinity);
+    const mouseX = useMotionValue(Infinity); // Default value
 
     const renderChildren = () => {
       return React.Children.map(children, (child) => {
         if (React.isValidElement(child) && child.type === DockIcon) {
-          return React.cloneElement(child, {
-            ...(child.props && typeof child.props === 'object' ? child.props : {}),
-            mouseX: mouseX,
+          return React.cloneElement(child as React.ReactElement<DockIconProps>, {
+            ...(child.props as DockIconProps),
+            mouseX, // Pass mouseX value
             size: iconSize,
             magnification: iconMagnification,
             distance: iconDistance,
@@ -63,8 +63,8 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
     return (
       <motion.div
         ref={ref}
-        onMouseMove={(e) => mouseX.set(e.pageX)}
-        onMouseLeave={() => mouseX.set(Infinity)}
+        onMouseMove={(e) => mouseX.set(e.pageX)} // Track mouse position
+        onMouseLeave={() => mouseX.set(Infinity)} // Reset to default value
         {...props}
         className={cn(dockVariants({ className }), {
           "items-start": direction === "top",
@@ -85,7 +85,7 @@ export interface DockIconProps
   size?: number;
   magnification?: number;
   distance?: number;
-  mouseX?: MotionValue<number>;
+  mouseX?: MotionValue<number>; // Make sure mouseX is optional here
   className?: string;
   children?: React.ReactNode;
   props?: PropsWithChildren;
@@ -102,9 +102,12 @@ const DockIcon = ({
 }: DockIconProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const padding = Math.max(6, size * 0.2);
-  const defaultMouseX = useMotionValue(Infinity);
+  const defaultMouseX = useMotionValue(Infinity); // Default value if mouseX is undefined
 
-  const distanceCalc = useTransform(mouseX ?? defaultMouseX, (val: number) => {
+  // Make sure mouseX falls back to defaultMouseX if not provided
+  const effectiveMouseX = mouseX ?? defaultMouseX;
+
+  const distanceCalc = useTransform(effectiveMouseX, (val: number) => {
     const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
     return val - bounds.x - bounds.width / 2;
   });

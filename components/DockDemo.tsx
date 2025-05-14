@@ -70,17 +70,17 @@ const DATA = {
     social: {
       GitHub: {
         name: "GitHub",
-        url: "#",
+        url: "https://github.com/icandrew",
         icon: Icons.github,
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "#",
+        url: "https://www.linkedin.com/in/amistlr/",
         icon: Icons.linkedin,
       },
       email: {
         name: "Send Email",
-        url: "#",
+        url: "mailto:icandrew08@gmail.com",
         icon: Icons.email,
       },
     },
