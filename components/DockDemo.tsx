@@ -95,26 +95,32 @@ export function DockDemo() {
       <TooltipProvider>
         <Dock direction="middle">
           {DATA.navbar.map((item) => (
-            <DockIcon key={item.label}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    href={item.href}
-                    aria-label={item.label}
-                    className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full pointer-events-auto",
-                    )}
-                  >
-                    <item.icon className="size-4" />
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>{item.label}</p>
-                </TooltipContent>
-              </Tooltip>
-            </DockIcon>
-          ))}
+  <DockIcon key={item.label}>
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <Link
+          href={item.href}
+          aria-label={item.label}
+          className={cn(
+            buttonVariants({ variant: "ghost", size: "icon" }),
+            "size-12 rounded-full pointer-events-auto",
+          )}
+          onClick={(e) => {
+            if (item.href === "#") {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
+        >
+          <item.icon className="size-4" />
+        </Link>
+      </TooltipTrigger>
+      <TooltipContent>
+        <p>{item.label}</p>
+      </TooltipContent>
+    </Tooltip>
+  </DockIcon>
+))}
           <Separator orientation="vertical" className="h-full" />
           {Object.entries(DATA.contact.social).map(([name, social]) => (
             <DockIcon key={name}>
