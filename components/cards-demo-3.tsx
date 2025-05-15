@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 /**
  * Props for CardDemo component.
  */
-interface CardDemoProps {
+export interface CardDemoProps {
   image: string;
   title: string;
   description: string;
