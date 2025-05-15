@@ -8,6 +8,7 @@ import HeroAurora from "@/components/HeroAurora";
 import { ScrollBasedVelocityDemo } from "@/components/ScrollBasedVelocityDemo";
 import { DockDemo } from "@/components/DockDemo";
 import { AuroraBackgroundDemo } from "@/components/AuroraBackgroundDemo";
+import { TimelineDemo } from "@/components/timeline-demo";
 import { FeaturesSectionDemo } from "@/components/FeaturesSectionDemo";
 import { cardDemoData, CardDemo } from "@/components/cards-demo-3";
 
@@ -83,6 +84,11 @@ export default function Home() {
         {/* Features Section */}
         <section className="w-full px-6 mt-8 sm:mt-12 md:mt-16">
           <FeaturesSectionDemo />
+        </section>
+
+        {/* Timeline Demo */}
+        <section className="w-full px-6 mt-8 sm:mt-12 md:mt-16">
+          <TimelineDemo />
         </section>
 
         {/* Aurora Background Demo */}
