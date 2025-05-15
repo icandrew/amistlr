@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 import HeroAurora from "@/components/HeroAurora";
 import { ScrollBasedVelocityDemo } from "@/components/ScrollBasedVelocityDemo";
 import { DockDemo } from "@/components/DockDemo";
-import { AuroraBackgroundDemo } from "@/components/AuroraBackgroundDemo";
 import { TimelineDemo } from "@/components/timeline-demo";
 import { FeaturesSectionDemo } from "@/components/FeaturesSectionDemo";
 import { cardDemoData, CardDemo } from "@/components/cards-demo-3";
@@ -91,10 +90,6 @@ export default function Home() {
           <TimelineDemo />
         </section>
 
-        {/* Aurora Background Demo */}
-        <section className="w-full px-6 mt-8 sm:mt-12 md:mt-16">
-          <AuroraBackgroundDemo />
-        </section>
       </div>
 
       {/* Dock at the bottom of the page */}
