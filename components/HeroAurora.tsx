@@ -23,8 +23,8 @@ function LottieWreath() {
 
 export default function HeroAurora() {
   return (
-    <div className="relative w-full min-h-screen flex items-center justify-center">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div className="relative w-full h-[90vh] flex items-center justify-center">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center -mt-20">
         <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter">
           Ship{" "}
           <span className="relative inline-block">
