@@ -23,22 +23,22 @@ function LottieWreath() {
 
 export default function HeroAurora() {
   return (
-    <section
-      className="min-h-screen flex items-center justify-center px-4 py-8 md:py-8 md:px-8 lg:py-24 lg:px-16"
-      style={{ boxSizing: 'border-box' }}
-    >
-      <h1 className="text-4xl font-bold justify-center text-center tracking-tighter md:text-5xl lg:text-7xl relative inline-block">
-        Ship {" "}
-        <span className="relative inline-block">
-          <AuroraText>beautiful</AuroraText>
-          <span className="absolute right-[-0.8em] -bottom-3">
-            <LottieWreath />
+    <div className="relative w-full min-h-screen flex items-center justify-center">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter">
+          Ship{" "}
+          <span className="relative inline-block">
+            <AuroraText>beautiful</AuroraText>
+            <span className="absolute right-[-0.8em] -bottom-3">
+              <LottieWreath />
+            </span>
           </span>
-        </span>
-        <br />
-        lorem ipsum dolor sit amet adipisicing elit.
-      </h1>
-    </section>
+          <br />
+          <span className="text-3xl md:text-4xl lg:text-6xl text-muted-foreground">
+            lorem ipsum dolor sit amet adipisicing elit.
+          </span>
+        </h1>
+      </div>
+    </div>
   );
 }
-
