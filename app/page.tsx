@@ -10,8 +10,10 @@ import type { CardDemoProps } from '@/components/cards-demo-3';
 const HeroAurora = dynamic(() => import('@/components/HeroAurora'), { ssr: false });
 const ScrollBasedVelocityDemo = dynamic(() => import('@/components/ScrollBasedVelocityDemo').then(mod => ({ default: mod.ScrollBasedVelocityDemo })), { ssr: false });
 const DockDemo = dynamic(() => import('@/components/DockDemo').then(mod => ({ default: mod.DockDemo })), { ssr: false });
+const ThreeDMarqueeDemo = dynamic(() => import('@/components/three-d-marquee-demo').then(mod => ({ default: mod.ThreeDMarqueeDemo })), { ssr: false });
 const TimelineDemo = dynamic(() => import('@/components/timeline-demo').then(mod => ({ default: mod.TimelineDemo })), { ssr: false });
 const FeaturesSectionDemo = dynamic(() => import('@/components/FeaturesSectionDemo').then(mod => ({ default: mod.FeaturesSectionDemo })), { ssr: false });
+const Footer = dynamic(() => import('@/components/footer'), { ssr: false });
 
 const cardGridVariants = {
   hidden: {},
@@ -91,12 +93,18 @@ export default function Home() {
           <FeaturesSectionDemo />
         </section>
 
+        <section className="w-full">
+          <ThreeDMarqueeDemo />
+        </section>
         <section className="w-full px-6 mt-8 sm:mt-12 md:mt-16">
           <TimelineDemo />
         </section>
       </div>
 
       <DockDemo />
+      <section className="w-full px-6 mt-8 sm:mt-12 md:mt-16">
+          <Footer />
+        </section>
     </>
   );
 }
