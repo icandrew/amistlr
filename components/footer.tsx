@@ -3,7 +3,6 @@
 import type React from "react"
 
 import { useRef } from "react"
-import Link from "next/link"
 import { motion, useScroll, useTransform } from "framer-motion"
 
 export default function Footer() {
@@ -39,33 +38,10 @@ export default function Footer() {
       <div className="border-t border-[#E5E5E5]">
         <div className="w-full px-6 mx-auto py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-gray-700">© 2025 Amistlr by Disha Shah. All rights reserved.</p>
-
-            <div className="flex items-center">
-              <NavLink href="/privacy-policy">Privacy Policy</NavLink>
-              <div className="h-4 w-px bg-[#C2C2C2] mx-2"></div>
-              <NavLink href="/terms-and-conditions">Terms &amp; Conditions</NavLink>
-            </div>
+            <p className="text-sm text-gray-700">© 2025 Amistlr by Andrew Jake Bagsit. All rights reserved.</p>
           </div>
         </div>
       </div>
     </footer>
-  )
-}
-
-interface NavLinkProps {
-  href: string
-  children: React.ReactNode
-  active?: boolean
-}
-
-function NavLink({ href, children, active }: NavLinkProps) {
-  return (
-    <Link
-      href={href}
-      className={`px-3 py-2 rounded-full text-sm hover:bg-black/5 transition-colors ${active ? "font-semibold" : ""}`}
-    >
-      {children}
-    </Link>
   )
 }
