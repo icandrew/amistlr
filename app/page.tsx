@@ -54,11 +54,7 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col items-center justify-center min-h-screen py-8 pb-16 gap-8 sm:px-5 sm:py-16 sm:pb-20 md:gap-12 md:px-5 md:py-20 font-[family-name:var(--font-geist-sans)] bg-background">
-        <section className="w-full flex items-center justify-center min-h-[100dvh] px-6 pt-8 pb-0 sm:pt-12 sm:pb-0 md:mt-16">
-          <HeroAurora />
-        </section>
-
-        <div className="block md:hidden" style={{ minHeight: '40vh' }} />
+        <HeroAurora />
 
         <section className="w-full px-6 mt-0 sm:mt-12 md:mt-16">
           <motion.div
@@ -96,6 +92,7 @@ export default function Home() {
         <section className="w-full">
           <ThreeDMarqueeDemo />
         </section>
+
         <section className="w-full px-6 mt-8 sm:mt-12 md:mt-16">
           <TimelineDemo />
         </section>
@@ -103,8 +100,8 @@ export default function Home() {
 
       <DockDemo />
       <section className="w-full px-6 mt-8 sm:mt-12 md:mt-16">
-          <Footer />
-        </section>
+        <Footer />
+      </section>
     </>
   );
 }

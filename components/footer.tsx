@@ -34,31 +34,12 @@ export default function Footer() {
             />
           </motion.div>
         </div>
-
-        <div className="w-full px-6 mx-auto py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center">
-              <Link href="/" className="text-black font-semibold text-sm uppercase tracking-wider">
-                Avanté
-              </Link>
-            </div>
-
-            <div className="flex items-center space-x-2">
-              <NavLink href="/" active>
-                Home
-              </NavLink>
-              <NavLink href="/blog">Blog</NavLink>
-              <NavLink href="/frequently-asked-questions">FAQs</NavLink>
-              <NavLink href="/contact">Contact</NavLink>
-            </div>
-          </div>
-        </div>
       </div>
 
       <div className="border-t border-[#E5E5E5]">
         <div className="w-full px-6 mx-auto py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-gray-700">© 2025 Avanté by Disha Shah. All rights reserved.</p>
+            <p className="text-sm text-gray-700">© 2025 Amistlr by Disha Shah. All rights reserved.</p>
 
             <div className="flex items-center">
               <NavLink href="/privacy-policy">Privacy Policy</NavLink>
